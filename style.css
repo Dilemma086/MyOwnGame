@@ -1,0 +1,19 @@
+
+body{
+    padding: 10%;
+}
+.row{
+    display: flex;
+    justify-content: center;
+}
+.name{
+    padding: 25px 50px;
+    border: 2px solid yellowgreen;
+    background-color: cornflowerblue;
+    font-size: 25px;
+    color: white;
+    text-align: center;    
+}
+.row :first-child{
+    width: 160px; 
+} 
