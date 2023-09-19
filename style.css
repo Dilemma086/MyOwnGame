@@ -1,6 +1,11 @@
 body{
-    height: 100vh;
-   position: relative
+   height: 100vh;
+   position: relative;
+   background-image: url(/bg.jpg);
+   background-repeat: no-repeat;
+   background-size: 100vh;
+   background-position: center;
+   
 }
 main{
     margin: 0;
