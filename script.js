@@ -7,19 +7,59 @@ const arr = [
     },
     {
         "name": "threeHundredRow1",
-        "question": "Какое высказывание послужило, знаменитому падению с чердака сарайки?",
-        "answer": "Можно строить без гвоздей"
+        "question": "Какое высказывание предвещало, знаменитому падению с чердака сарайки?",
+        "answer": "Можно строить без гвоздей",
+        "img": "upindown.png"
     },
     {
         "name": "fiveHundredRow1",
         "question": "Любимый напиток, который предлагает выпить Юбиляр в некотором гневе?",
-        "answer": "В рот компот"
+        "answer": "В рот компот",
+        "img": "jooce.png"
+    },
+    {
+        "name": "oneHundredRow2",
+        "question": "",
+        "answer": "",
+        "img": ""
+    },
+    {
+        "name": "threeHundredRow2",
+        "question": "",
+        "answer": "",
+        "img": ""
+    },
+    {
+        "name": "fiveHundredRow2",
+        "question": "Как по вашему, что означат это число?",
+        "answer": "Столько лет супруге Юбиляра",
+        "img": "69.png"
+    },
+    {
+        "name": "oneHundredRow3",
+        "question": "Салон какого автомобиля представлен на фото",
+        "answer": "ВАЗ 2121 1981 года",
+        "img": "salonAuto.jpg"
+    },
+    {
+        "name": "threeHundredRow3",
+        "question": "",
+        "answer": "",
+        "img": ""
+    },
+    {
+        "name": "fiveHundredRow3",
+        "question": "",
+        "answer": "",
+        "img": ""
     }
+
 ]
     
 const body = document.querySelector('body')
 document.addEventListener('click', (e) =>{
     let target = e.target
+    console.log(target);
     if(!target.dataset.val) return
     let id = target.dataset.val
     for(let i=0; i<arr.length;i++ ){
@@ -48,6 +88,7 @@ document.addEventListener('click', (e) =>{
                 modalWindow.remove()
                
             })
+            target.classList.add('covert')
         }
     }
 })
