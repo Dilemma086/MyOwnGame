@@ -37,53 +37,75 @@ const arr = [
     },
     {
         "name": "oneHundredRow3",
-        "question": "Салон какого автомобиля представлен на фото",
-        "answer": "ВАЗ 2121 1981 года",
-        "img": "salonAuto.jpg"
+        "question": "Эти предметы очень хотел приобрести Юбиляр, но что то в дороге пошло не так",
+        "answer": "Покупка колес неожиданно прервалась в Свердловске",
+        "butdown": "vaz2121kolesa.png"
     },
     {
         "name": "threeHundredRow3",
-        "question": "",
-        "answer": "",
-        "img": ""
+        "question": "Какой предмет одежды Юбиляр планировал носить много лет, не смотря на их износ, применяя хитрую тактику?",
+        "answer": "Иметь несколько пар обуви одной модели, менять левую или правую туфлю при износе",
+        "butdown": "euroshop.png"
+        
     },
     {
         "name": "fiveHundredRow3",
-        "question": "",
-        "answer": "",
-        "img": ""
+        "question": "С помощью какого предмета однажды Юбиляр потерял любимую?",
+        "answer": "Выронил при перевозке на мотороллере 'Турист'",
+        "butdown": "motoroller.png"
     }
-
 ]
     
 const body = document.querySelector('body')
 document.addEventListener('click', (e) =>{
     let target = e.target
-    console.log(target);
+    
     if(!target.dataset.val) return
     let id = target.dataset.val
     for(let i=0; i<arr.length;i++ ){
         if(arr[i].name === id){
             body.classList.add('tone')
             let div = document.createElement('div')
+            let divDiv = document.createElement('div')
+            let imgBlock = document.createElement('div')
             body.append(div)
             div.classList.add('modalWindow')
             div.innerHTML=`
-            <div class="modal">
-                <span class="close"><img src='close.png'></span>
-                <img class="picture" src="${arr[i].img}">
-                <h1>${arr[i].question}</h1>
-                <button>Ответ</button>
-                <h2 hidden="true">${arr[i].answer}</h2>
-            </div>    
+                <div class="modal">
+                    <span class="close"><img src='close.png'></span>
+                    <h1>${arr[i].question}</h1>
+                    <button>Ответ</button>
+                    <div class="btn">
+                        <p> Верный ответ дал:</p>
+                        <button class="btn1">Первый игрок</button>
+                        <button class="btn2">Второй игрок</button>
+                        <button class="btn3">Третий игрок</button>
+                    </div>
+                    <h2 hidden="true">${arr[i].answer}</h2>
+                </div>    
             `
+            const close = document.querySelector('.close')
+            if(arr[i].img!=undefined){
+                close.after(divDiv)
+                divDiv.innerHTML=`
+                    <img class="picture" src="${arr[i].img}">
+                `
+            }    
+           
             const button = document.querySelector('button')
             const h2 = document.querySelector('h2')
             button.addEventListener('click', () => {
                 h2.hidden = false
+                if(arr[i].butdown!=undefined){
+                    h2.after(imgBlock)
+                    imgBlock.innerHTML=`
+                        <img class="butdown" src="${arr[i].butdown}"/>
+                    `
+                }
             })
+           
             const modalWindow = document.querySelector('.modalWindow')
-            const close = document.querySelector('.close')
+            
             close.addEventListener('click', () => {
                 modalWindow.remove()
                
