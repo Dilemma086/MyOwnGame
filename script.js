@@ -57,6 +57,9 @@ const arr = [
 ]
     
 const body = document.querySelector('body')
+let conunt1 = 0
+let conunt2 = 0
+let conunt3 = 0
 document.addEventListener('click', (e) =>{
     let target = e.target
     
@@ -64,7 +67,7 @@ document.addEventListener('click', (e) =>{
     let id = target.dataset.val
     for(let i=0; i<arr.length;i++ ){
         if(arr[i].name === id){
-            body.classList.add('tone')
+           
             let div = document.createElement('div')
             let divDiv = document.createElement('div')
             let imgBlock = document.createElement('div')
@@ -72,15 +75,16 @@ document.addEventListener('click', (e) =>{
             div.classList.add('modalWindow')
             div.innerHTML=`
                 <div class="modal">
-                    <span class="close"><img src='close.png'></span>
-                    <h1>${arr[i].question}</h1>
-                    <button>Ответ</button>
                     <div class="btn">
                         <p> Верный ответ дал:</p>
-                        <button class="btn1">Первый игрок</button>
-                        <button class="btn2">Второй игрок</button>
-                        <button class="btn3">Третий игрок</button>
+                        <button class="btn1">Игрок 1</button>
+                        <button class="btn2">Игрок 2</button>
+                        <button class="btn3">Игрок 3</button>
                     </div>
+                    <span class="close"><img src='close.png'></span>
+                    <h1>${arr[i].question}</h1>
+                    <button class="otvet">Ответ</button>
+                    
                     <h2 hidden="true">${arr[i].answer}</h2>
                 </div>    
             `
@@ -92,9 +96,9 @@ document.addEventListener('click', (e) =>{
                 `
             }    
            
-            const button = document.querySelector('button')
+            const otvet = document.querySelector('.otvet')
             const h2 = document.querySelector('h2')
-            button.addEventListener('click', () => {
+            otvet.addEventListener('click', () => {
                 h2.hidden = false
                 if(arr[i].butdown!=undefined){
                     h2.after(imgBlock)
