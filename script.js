@@ -57,10 +57,17 @@ const arr = [
 ]
     
 const body = document.querySelector('body')
+const cnt1 = document.querySelector('.cnt1')
+const cnt2 = document.querySelector('.cnt2')
+const cnt3 = document.querySelector('.cnt3')
 let conunt1 = 0
 let conunt2 = 0
 let conunt3 = 0
-document.addEventListener('click', (e) =>{
+cnt1.innerText = conunt1
+cnt2.innerText = conunt2
+cnt3.innerText = conunt3
+
+document.addEventListener('click', (e, conunt1) =>{
     let target = e.target
     let count = target.innerText
     if(!target.dataset.val) return
@@ -91,14 +98,12 @@ document.addEventListener('click', (e) =>{
             const btn1 = document.querySelector('.btn1')
             const btn2 = document.querySelector('.btn2')
             const btn3 = document.querySelector('.btn3')
-            const cnt1 = document.querySelector('.cnt1')
-            const cnt2 = document.querySelector('.cnt2')
-            const cnt3 = document.querySelector('.cnt3')
+
 
             btn1.addEventListener('click', () =>{
                 conunt1 = conunt1 + count
                 cnt1.innerText = conunt1
-                return conunt1
+                
             })
             const close = document.querySelector('.close')
             if(arr[i].img!=undefined){
