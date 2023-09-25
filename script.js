@@ -62,7 +62,7 @@ let conunt2 = 0
 let conunt3 = 0
 document.addEventListener('click', (e) =>{
     let target = e.target
-    
+    let count = target.innerText
     if(!target.dataset.val) return
     let id = target.dataset.val
     for(let i=0; i<arr.length;i++ ){
@@ -88,6 +88,18 @@ document.addEventListener('click', (e) =>{
                     <h2 hidden="true">${arr[i].answer}</h2>
                 </div>    
             `
+            const btn1 = document.querySelector('.btn1')
+            const btn2 = document.querySelector('.btn2')
+            const btn3 = document.querySelector('.btn3')
+            const cnt1 = document.querySelector('.cnt1')
+            const cnt2 = document.querySelector('.cnt2')
+            const cnt3 = document.querySelector('.cnt3')
+
+            btn1.addEventListener('click', () =>{
+                conunt1 = conunt1 + count
+                cnt1.innerText = conunt1
+                return conunt1
+            })
             const close = document.querySelector('.close')
             if(arr[i].img!=undefined){
                 close.after(divDiv)
