@@ -67,9 +67,22 @@ cnt1.innerText = conunt1
 cnt2.innerText = conunt2
 cnt3.innerText = conunt3
 
-document.addEventListener('click', (e, conunt1) =>{
+const num1 = (count) =>{
+    conunt1 = conunt1 + count
+    cnt1.innerHTML = conunt1
+}
+const num2 = (count) =>{
+    conunt2 = conunt2 + count
+    cnt2.innerHTML = conunt2
+}
+const num3 = (count) =>{
+    conunt3 = conunt3 + count
+    cnt3.innerHTML = conunt3
+}
+
+document.addEventListener('click', (e) =>{
     let target = e.target
-    let count = target.innerText
+    let count = +(target.innerText)
     if(!target.dataset.val) return
     let id = target.dataset.val
     for(let i=0; i<arr.length;i++ ){
@@ -84,7 +97,7 @@ document.addEventListener('click', (e, conunt1) =>{
                 <div class="modal">
                     <div class="btn">
                         <p> Верный ответ дал:</p>
-                        <button class="btn1">Игрок 1</button>
+                        <button class="btn1" data-btn="btn1">Игрок 1</button>
                         <button class="btn2">Игрок 2</button>
                         <button class="btn3">Игрок 3</button>
                     </div>
@@ -99,12 +112,19 @@ document.addEventListener('click', (e, conunt1) =>{
             const btn2 = document.querySelector('.btn2')
             const btn3 = document.querySelector('.btn3')
 
-
             btn1.addEventListener('click', () =>{
-                conunt1 = conunt1 + count
-                cnt1.innerText = conunt1
+                num1(count)
                 
             })
+            btn2.addEventListener('click', () =>{
+                num2(count)
+                
+            })
+            btn3.addEventListener('click', () =>{
+                num3(count)
+                
+            })
+
             const close = document.querySelector('.close')
             if(arr[i].img!=undefined){
                 close.after(divDiv)
