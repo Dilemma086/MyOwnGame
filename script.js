@@ -19,9 +19,9 @@ const arr = [
     },
     {
         "name": "oneHundredRow2",
-        "question": "",
-        "answer": "",
-        "img": ""
+        "question": "Сколько месяцев в году имеют 28 дней?",
+        "answer": "12 месяцев",
+        "img": "kalehdar.jpg"
     },
     {
         "name": "threeHundredRow2",
