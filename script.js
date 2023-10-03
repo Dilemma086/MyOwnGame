@@ -60,12 +60,19 @@ const body = document.querySelector('body')
 const cnt1 = document.querySelector('.cnt1')
 const cnt2 = document.querySelector('.cnt2')
 const cnt3 = document.querySelector('.cnt3')
+const zagluhka = document.querySelector('.zagluhka')
+const btnZagluhka = document.querySelector('.btnZagluhka')
 let conunt1 = 0
 let conunt2 = 0
 let conunt3 = 0
 cnt1.innerText = conunt1
 cnt2.innerText = conunt2
 cnt3.innerText = conunt3
+
+btnZagluhka.addEventListener('click', () => {
+    zagluhka.hidden = true
+})
+
 
 const num1 = (count) =>{
     conunt1 = conunt1 + count

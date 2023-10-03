@@ -128,3 +128,18 @@ h2{
 .cnt1,.cnt2,.cnt3{
     color: #fdfa3e
 }
+.zagluhka{
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-image: url(banner70.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    text-align: center;
+}
+.btnZagluhka{
+    position: absolute;
+    bottom: 55px;
+}
