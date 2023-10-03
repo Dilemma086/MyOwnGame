@@ -104,9 +104,9 @@ document.addEventListener('click', (e) =>{
                 <div class="modal">
                     <div class="btn">
                         <p> Верный ответ дал:</p>
-                        <button class="btn1" data-btn="btn1">Игрок 1</button>
-                        <button class="btn2">Игрок 2</button>
-                        <button class="btn3">Игрок 3</button>
+                        <button class="btn1" data-btn="btn1">Боб</button>
+                        <button class="btn2">Юби</button>
+                        <button class="btn3">Изя</button>
                     </div>
                     <span class="close"><img src='close.png'></span>
                     <h1>${arr[i].question}</h1>
