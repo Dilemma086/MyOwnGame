@@ -137,6 +137,7 @@ h2{
     background-image: url(banner70.jpg);
     background-repeat: no-repeat;
     background-size: 100%;
+    background-position: center;
     text-align: center;
 }
 .btnZagluhka{
