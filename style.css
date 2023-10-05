@@ -141,6 +141,5 @@ h2{
     text-align: center;
 }
 .btnZagluhka{
-    position: absolute;
-    bottom: 55px;
+    margin-top: calc(100% - 60%);
 }
